@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700')
+$main: #F76891
+$text-color: #202120
+
+body
+	font-family: 'Roboto', sans-serif
+	background: #293351
+.container
+	max-width: 600px
+	margin: 0 auto
+	padding: 50px
+	.search-wrapper
+		text-align: center
+		display: flex
+		margin-bottom: 50px
+		align-items: center
+		input[type="text"]
+			flex: 1
+			border: none
+			color: rgba(0,0,0,.8)
+			padding: 20px 10px
+			margin: 0 10px 0 0
+			border-radius: 3px
+			box-shadow: 0 1px 3px rgba(0,0,0,0.3)
+			outline: none
+			font-size: 18px
+			transition: all 0.2s ease-in-out
+			&::placeholder
+				text-transform: uppercase
+				font-size: 15px
+		.btn
+			text-decoration: none
+			box-shadow: 0 1px 3px rgba(0,0,0,0.3)
+			border: 1px solid $main
+			border-radius: 2px
+			background: transparent
+			color: #fff
+			display: block
+			padding: 15px 7px
+			transition: all 0.2s ease-in-out
+			&:hover
+				background: $main
+			
+	.search-content
+		border-top: 1px solid rgba(255,255,255,0.3)
+		padding: 10px 0
+
+		.entries
+			padding: 0
+			a
+				text-decoration: none
+			li
+				list-style: none
+				background: #fff
+				box-shadow: 0 1px 3px rgba(0,0,0,0.3)
+				margin: 20px 0
+				padding: 20px
+				border-radius: 3px
+				cursor: pointer
+				color: $main
+				font-weight: bold
+				transition: all 0.3s ease-in-out
+				&:hover
+					box-shadow: 0 3px 5px rgba(0,0,0,0.3)
+					transform: scale(1.03)
+				p
+					border-top: 1px solid rgba(0,0,0,.2)
+					padding: 10px
+					font-weight: 300
+					color: $text-color
+		
+.fly-in
+	animation: animBottom 0.4s ease-in-out
+	tranform-origin: bottom
+@keyframes animBottom
+	from
+		opacity: 0.3
+		transform: translateY(100%)
+	to
+		opacity: 1
+		transform: translateY(0)
+		
+@media (max-width: 480px)
+	.container
+		.search-wrapper
+			display: block
+			input[type="text"]
+				width: 100%
+				margin-left: -10px
+				padding: 20px 10px
+			.btn
+				display: block
+				margin-top: 20px
+				
+	
